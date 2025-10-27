@@ -29,6 +29,7 @@ To install `simplefold` package from github repository, run
 git clone https://github.com/apple/ml-simplefold.git
 cd ml-simplefold
 conda create -n simplefold python=3.10
+conda activate simplefold
 python -m pip install -U pip build; pip install -e .
 ```
 If you want to use MLX backend on Apple silicon: 
@@ -120,6 +121,12 @@ python src/simplefold/process_mmcif.py \
     --data_dir [MMCIF_DIR]   # directory of mmcif files
     --out_dir [OUTPUT_DIR]   # directory of processed targets
     --use-assembly
+```
+To further tokenize the processed structures:
+```
+python src/simplefold/process_structure.py \
+    --target_dir [TARGET_DIR]   # directory of processed targets
+    --token_dir [TOKEN_DIR]   # directory of tokenized data
 ```
 
 ### Training
